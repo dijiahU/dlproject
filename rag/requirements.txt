@@ -1,0 +1,11 @@
+# 本项目在以下版本上测试通过（校内集群 conda 环境）。
+# BM25 为自实现，无需额外依赖。
+torch==2.10.0
+transformers==5.5.4
+sentence-transformers==5.3.0
+faiss-cpu==1.13.2
+vllm==0.19.0
+numpy==2.2.6
+pandas
+# 导出 .xlsx 时需要（导出 .csv 则不需要）：
+# openpyxl
