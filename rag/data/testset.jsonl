@@ -1,7 +1,50 @@
-{"query": "《深度学习》这门课的任课老师是谁？", "gt_answer": "何旭明", "type": "factual"}
-{"query": "信息学院有哪些研究方向？", "gt_answer": "（占位，待核对）视觉与数据智能、智能网络、后摩尔器件与集成系统、智慧电气科学、自动化与机器人、系统与安全、智能医学信息等研究中心方向", "type": "factual"}
-{"query": "上海科技大学信息学院成立于哪一年？", "gt_answer": "（占位，待核对）2013年", "type": "factual"}
-{"query": "《深度学习》这门课任课老师的学术背景是什么？", "gt_answer": "（占位，待核对：多跳题，需先查到任课老师再查其简历）", "type": "multi-hop"}
-{"query": "信息学院专业型硕士与学术型硕士的培养方案有什么不同？", "gt_answer": "（占位，待核对）", "type": "comparative"}
-{"query": "我想做机器人方向，信息学院有哪些导师可以推荐？", "gt_answer": "（占位，待核对：条件型，需检索机器人/自动化方向的faculty）", "type": "conditional"}
-{"query": "上海科技大学最新的讲座信息有哪些？", "gt_answer": "（占位，待核对：时效型）", "type": "time-sensitive"}
+{"query": "上海科技大学一共有几个院所？", "gt_answer": "17个", "type": "factual"}
+{"query": "上海科技大学信息学院成立于哪一年？", "gt_answer": "2013年", "type": "factual"}
+{"query": "信息学院的英文名称是什么？", "gt_answer": "School of Information Science and Technology", "type": "factual"}
+{"query": "上海科技大学的育人理念是什么？", "gt_answer": "立志、成才、报国、裕民", "type": "factual"}
+{"query": "信息学院官网列出了哪些本科专业？", "gt_answer": "计算机科学与技术，电子信息工程", "type": "factual"}
+{"query": "电子信息工程专业本科毕业需要修满多少学分？", "gt_answer": "145", "type": "factual"}
+{"query": "《深度学习工程实践》这门课的课程代码是什么？", "gt_answer": "CS290S", "type": "factual"}
+{"query": "《自然辩证法概论》这门课的任课老师是谁？", "gt_answer": "王健", "type": "factual"}
+{"query": "信息学院院长是谁？", "gt_answer": "虞晶怡", "type": "factual"}
+{"query": "信息学院有哪些研究中心或实验室？", "gt_answer": "视觉与数据智能中心、智能网络中心、后摩尔器件与集成系统中心、智慧电气科学中心、自动化与机器人中心、智能医学信息研究中心、系统与安全中心；上海科技大学-北京旷视科技有限公司联合实验室、上海科技大学微电子研究中心、上海科技大学-芒果TV联合实验室、上海科技大学-上海联影智能医疗科技有限公司联合实验室、上海科技大学-广东溢达纺织有限公司联合实验室；上海智能视觉影像及应用工程技术研究中心、上海高能效与智能定制芯片工程技术研究中心、上海市智能人机协同与交互前沿科学研究基地、智能感知与人机协同教育部重点实验室。", "type": "factual"}
+{"query": "信息学院教师主页通常包含哪些信息？", "gt_answer": "个人简介，团队介绍，代表论文，教学课程，成果等。", "type": "factual"}
+{"query": "信息学院研究生招生信息通常发布在哪个网站？", "gt_answer": "https://sist.shanghaitech.edu.cn/2825/list.htm", "type": "factual"}
+{"query": "学校官网上能否找到讲座通知？", "gt_answer": "能", "type": "factual"}
+{"query": "信息学院是否提供硕士和博士培养项目？", "gt_answer": "是", "type": "factual"}
+{"query": "上海科技大学的官方网址是什么？", "gt_answer": "https://www.shanghaitech.edu.cn/", "type": "factual"}
+{"query": "上海科技大学成立于哪一年？", "gt_answer": "2013年", "type": "factual"}
+{"query": "上海科技大学一共有哪些校区？", "gt_answer": "张江路校区和岳阳路校区", "type": "factual"}
+{"query": "上海科技大学的英文名称是什么？", "gt_answer": "ShanghaiTech University", "type": "factual"}
+{"query": "《科学与工程伦理》是哪个学院开设的课程？", "gt_answer": "创管学院（创业与管理学院）", "type": "factual"}
+{"query": "计算机科学与技术专业硕士研究生毕业需要修满多少学分？", "gt_answer": "33", "type": "factual"}
+{"query": "信息学院研究生学制是多少年？", "gt_answer": "3年", "type": "factual"}
+{"query": "信息学院研究生目前有几个专业？分别是什么？", "gt_answer": "4个；计算机科学与技术（含应用数学），电子科学与技术，信息与通信工程，电子信息。", "type": "factual"}
+{"query": "上海科技大学的主校区地址是什么？", "gt_answer": "上海市浦东新区华夏中路393号", "type": "factual"}
+{"query": "信息学院有几个省部级研究中心？分别是什么？", "gt_answer": "4个；上海智能视觉影像及应用工程技术研究中心、上海高能效与智能定制芯片工程技术研究中心、上海市智能人机协同与交互前沿科学研究基地、智能感知与人机协同教育部重点实验室。", "type": "factual"}
+{"query": "截至2025年12月，上海科技大学有多少教职工？", "gt_answer": "1645", "type": "factual"}
+{"query": "上海科技大学有没有设立法学院？", "gt_answer": "没有", "type": "factual"}
+{"query": "上海科技大学的校徽主色调是什么？", "gt_answer": "红白色", "type": "factual"}
+{"query": "上海科技大学的博士研究生标准学制是几年？", "gt_answer": "3年", "type": "factual"}
+{"query": "信息学院的创始院长是谁？", "gt_answer": "王雪红", "type": "factual"}
+{"query": "本学期《导波光学》课程现在是否开设？", "gt_answer": "否", "type": "Time-sensitive"}
+{"query": "当前最新的电子信息专业学位硕士培养方案版本是什么时候发布的？", "gt_answer": "45904", "type": "Time-sensitive"}
+{"query": "信息学院最近发布的招生相关通知是什么？", "gt_answer": "2026年5月29日发布的《上海科技大学信息科学与技术学院 2026年学术型博士研究生（申请-考核制）考核实施细则》", "type": "Time-sensitive"}
+{"query": "截止2026年5月31日，学校最新的学术活动是什么？", "gt_answer": "生命科学与技术学院黃澤蕾主讲的《Targeting different liver cancer hallmarks to boost immunotherapy response》", "type": "Time-sensitive"}
+{"query": "2026年6月1日学校官网有没有发布与机器人相关的新闻？", "gt_answer": "没有", "type": "Time-sensitive"}
+{"query": "信息学院专业型硕士与学术型硕士培养方案有什么不同？", "gt_answer": "应比较培养目标、课程要求、实践要求、论文要求等关键点。", "type": "Comparative"}
+{"query": "信息学院与学校主页在发布新闻方面有什么区别？", "gt_answer": "学校主页更偏全校新闻，学院主页更偏本院教学科研活动。", "type": "Comparative"}
+{"query": "教师主页和研究中心主页提供的信息有什么不同？", "gt_answer": "教师主页偏个人信息，研究中心主页偏团队方向、项目和成员介绍。", "type": "Comparative"}
+{"query": "本科培养方案和研究生培养方案在课程要求上有哪些主要差别？", "gt_answer": "应比较课程结构、学分要求、科研/论文要求等。", "type": "Comparative"}
+{"query": "本科的计算机科学与技术专业和电子信息工程专业在课程设置上有什么差异？", "gt_answer": "应从核心课程、方向侧重和学分结构等方面比较。", "type": "Comparative"}
+{"query": "信息学院官网和学校官网在招生信息发布上有什么分工？", "gt_answer": "学校官网偏统一招生政策，学院官网偏具体学院项目和实施信息", "type": "Comparative"}
+{"query": "白卫邦与刘松两位研究 机器人 的老师在研究方向上有哪些异同？", "gt_answer": "白卫邦老师主要研究的是医疗机器人与仿生机器人，刘松老师研究的是微纳机器人。", "type": "Comparative"}
+{"query": "后摩尔器件与集成系统中心与智慧电气科学中心在研究方向上有什么异同？", "gt_answer": "后摩尔器件与集成系统中心旨在促进新型器件、电路和系统的研究与应用。智慧电气科学中心旨在整合分布式微电网、智能电网、插电式电动汽车、物联网、大数据和人工智能等前沿技术，全面优化发电、储能、配电和利用的全过程。", "type": "Comparative"}
+{"query": "我想做机器人方向，信息学院有哪些导师可以推荐？", "gt_answer": "白卫邦、陈嘉豪、Boris Houska、Laurent Kneip、刘松、陆疌、Sören Schwertfeger、师玉娇、汪阳、Xavier Lagorce、肖晨曦、赵登吉。", "type": "Conditional"}
+{"query": "我想调剂电子信息专业型硕士研究生，初试分数需要满足什么条件？", "gt_answer": "总分大于300分，满分为100分的单科大于35分，满分大于100分的单科大于53分。", "type": "Conditional"}
+{"query": "王成老师主要的研究方向是什么，这位导师是否招收硕士研究生？", "gt_answer": "人工智能光计算芯片、半导体激光器、激光通信、激光雷达。招收硕士研究生", "type": "Multi-hop"}
+{"query": "信息学院的院长是谁？他属于哪个研究中心或实验室？", "gt_answer": "虞晶怡；视觉与数据智能中心。", "type": "Multi-hop"}
+{"query": "报考（080900 学术学位）电子科学与技术专业硕士研究生的同学，需要报考的专业课是什么？是学校自主命题的吗？", "gt_answer": "861电路原理；是学校自主命题的。", "type": "Multi-hop"}
+{"query": "信息学院哪个研究中心与医学有关？这个研究中心有几位教授？", "gt_answer": "智能医学信息研究中心；10位。", "type": "Multi-hop"}
+{"query": "信息学院的常任教授有几位？其中有几位属于智慧电气科学中心？", "gt_answer": "88；9。", "type": "Multi-hop"}
+{"query": "《光电器件II》这门课的任课老师是谁？他的邮箱是多少？", "gt_answer": "王成；wangcheng1@shanghaitech.edu.cn", "type": "Multi-hop"}

@@ -1,3 +1,9 @@
 # Python 编译缓存
 __pycache__/
 *.pyc
+
+# Local-only notes and temporary artifacts
+/rag/LOCAL_GRADIO_COMMANDS.md
+/image.png
+/rag/outputs/*.csv
+/rag/outputs/eval_accuracy_summary.*

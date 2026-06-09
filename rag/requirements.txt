@@ -7,5 +7,7 @@ faiss-cpu==1.13.2
 vllm==0.19.0
 numpy==2.2.6
 pandas
+jieba
+gradio
 # 导出 .xlsx 时需要（导出 .csv 则不需要）：
 # openpyxl
