@@ -11,6 +11,11 @@ from sentence_transformers import SentenceTransformer
 
 from bm25_index import BM25, tokenize
 
+try:
+    from tqdm.auto import tqdm
+except ImportError:  # pragma: no cover - tqdm is optional.
+    tqdm = None
+
 MODEL_NAME = "BAAI/bge-m3"
 INDEX_PATH = "rag/index/faiss.index"
 META_PATH  = "rag/index/meta.jsonl"
@@ -166,7 +171,15 @@ class Retriever:
         self.bm25 = None
         if use_hybrid:
             print("构建 BM25 索引...")
-            corpus = [tokenize(m["text"]) for m in self.meta]
+            texts = (m["text"] for m in self.meta)
+            if tqdm is not None:
+                texts = tqdm(
+                    texts,
+                    total=len(self.meta),
+                    desc="jieba 分词",
+                    unit="chunk",
+                )
+            corpus = [tokenize(text) for text in texts]
             self.bm25 = BM25(corpus)
 
         print(f"就绪：{self.index.ntotal} 段文本 (hybrid={'开' if use_hybrid else '关'})")

@@ -14,7 +14,7 @@
   -> 答案 + 来源片段
 ```
 
-- 知识库：`rag/data/chunks.jsonl`，共 12,533 段可检索文本。
+- 知识库：本次评测使用本地清洗版 `rag/data/chunks.jsonl`，共 253,032 段可检索文本。
 - 向量索引：`rag/index/faiss.index` + `rag/index/meta.jsonl`。
 - 测试集：`rag/data/testset.jsonl`，50 道题，字段为 `query`、`gt_answer`、`type`。
 - 最终评测产物：`rag/outputs/eval_4b.json` 和 `rag/outputs/eval_9b.json`。
@@ -58,6 +58,8 @@ conda activate rag
 pip install -r rag/requirements.txt
 ```
 
+注意：本次最新评测使用的清洗版大体积语料与索引文件不随提交上传。复现实验前请在本地准备 `rag/data/chunks.jsonl`、`rag/data/documents.jsonl`，然后重新运行索引构建。
+
 集群上可以直接使用已有环境：
 
 ```bash
@@ -90,19 +92,21 @@ python rag/src/rag_pipeline.py
 
 `rag_pipeline.py` 已内置 Gradio。默认启动 `0.0.0.0:7860`，默认使用 `top_k=8` 和 hybrid 检索，页面上可以取消勾选 hybrid 回到 dense。
 
-服务器端在 GPU 节点上启动服务。下面是 9B + hybrid Gradio 的通用启动方式：
+服务器端在 GPU 节点上启动服务。下面是当前最佳 4B + hybrid Gradio 的通用启动方式：
 
 ```bash
 conda activate <rag-conda-env>
 cd <repo-root>
 export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
 
-RAG_LLM=Qwen/Qwen3.5-9B \
-RAG_GPU_UTIL=0.8 \
+RAG_LLM=Qwen/Qwen3.5-4B \
+RAG_GPU_UTIL=0.6 \
 GRADIO_SERVER_NAME=0.0.0.0 \
 GRADIO_SERVER_PORT=7860 \
 python rag/src/rag_pipeline.py
 ```
+
+如需测试 9B，将 `RAG_LLM` 改为 9B 的模型名或本地模型目录，并将 `RAG_GPU_UTIL` 调到如 `0.8`。
 
 如果在本机浏览器访问集群服务，需要 SSH 转发。本地端口示例使用 `1786`，远端 Gradio 端口为 `7860`：
 
@@ -147,18 +151,18 @@ python rag/src/evaluate_compare.py
 
 ## 7. 当前评测结论
 
-50 题人工核对结果：
+当前生成 prompt 为 v2：允许模型在资料证据充分时进行合并、计数、日期筛选、比较和二跳推理；只有完全没有相关证据或证据冲突无法判断时才拒答。50 题人工核对结果：
 
 | 模型 | dense | hybrid |
 |---|---:|---:|
-| Qwen3.5-4B | 15 / 50（30.00%） | 15 / 50（30.00%） |
-| Qwen3.5-9B | 20 / 50（40.00%） | 29 / 50（58.00%） |
+| Qwen3.5-4B | 30 / 50（60.00%） | 35 / 50（70.00%） |
+| Qwen3.5-9B | 30 / 50（60.00%） | 33 / 50（66.00%） |
 
-推荐配置为 **Qwen3.5-9B + hybrid，不使用 rerank**。rerank 在本测试集中会降低候选多样性，对列表题、多来源题和二跳证据题不稳定，因此已经删除。
+当前最佳配置为 **Qwen3.5-4B + hybrid，不使用 rerank**。9B 在 prompt v2 下从 30/50 提升到 33/50，但仍更容易保守拒答或给出多版本解释。rerank 在本测试集中会降低候选多样性，对列表题、多来源题和二跳证据题不稳定，因此已经删除。
 
 ## 8. 已知局限
 
-- 当前语料以 SIST 为主，学校主站、组织结构、校区、人员统计、学术活动等全校层面证据不足。
+- 当前语料虽已扩展到 253,032 个 chunk，但学校主站、组织结构、最新招生通知、校徽、学术活动等全校层面证据仍不完整。
 - “最新/最近/截至某日”问题依赖发布时间排序和最新网页覆盖，当前检索只能部分处理。
 - 列表题和多跳题需要多个页面共同支撑，单轮 top-k 容易遗漏关键片段。
 - 部分答案字符串在语料中有无关命中，但缺少正确上下文或关系，不能视为可回答证据。详见 `rag/report.md` 的“主要发现”。

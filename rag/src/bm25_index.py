@@ -12,6 +12,11 @@ from collections import defaultdict
 
 import jieba
 
+try:
+    from tqdm.auto import tqdm
+except ImportError:  # pragma: no cover - tqdm is optional.
+    tqdm = None
+
 _ALNUM = re.compile(r"[a-z0-9][a-z0-9_.@%+-]*")
 _CJK_SPAN = re.compile(r"[\u4e00-\u9fff]+")
 _URL = re.compile(r"https?://[^\s，。；、)）>]+")
@@ -80,7 +85,15 @@ class BM25:
         # 倒排索引：token -> {doc_id: 该词在该文档出现次数}
         self.inverted = defaultdict(dict)
         df = defaultdict(int)             # 每个 token 出现在多少篇文档里
-        for doc_id, tokens in enumerate(corpus_tokens):
+        iterable = enumerate(corpus_tokens)
+        if tqdm is not None:
+            iterable = tqdm(
+                iterable,
+                total=self.N,
+                desc="构建 BM25 倒排索引",
+                unit="doc",
+            )
+        for doc_id, tokens in iterable:
             tf = defaultdict(int)
             for t in tokens:
                 tf[t] += 1
