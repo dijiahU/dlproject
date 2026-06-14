@@ -7,3 +7,14 @@ __pycache__/
 /image.png
 /rag/outputs/*.csv
 /rag/outputs/eval_accuracy_summary.*
+
+data/data_process/*
+!/data/data_process/clean.py
+!/data/data_process/merge_corpus.py
+!/data/data_process/pipeline.py
+data/data_scrapy
+data/gradio*
+data/data_scrapy_new/rag_raw_data
+data/data_scrapy_new/sist_corpus.jsonl
+data/processed
+data/sist
